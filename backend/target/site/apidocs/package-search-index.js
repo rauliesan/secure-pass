@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.daw"},{"l":"com.daw.controller"},{"l":"com.daw.controller.dto"},{"l":"com.daw.datamodel.entity"},{"l":"com.daw.datamodel.repository"},{"l":"com.daw.error"},{"l":"com.daw.exceptions"},{"l":"com.daw.service"}];updateSearchResults();

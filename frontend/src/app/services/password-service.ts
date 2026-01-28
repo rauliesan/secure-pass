@@ -8,7 +8,7 @@ import { PasswordResponse } from '../models/password-response-interface';
 })
 export class PasswordService {
   
-  private url = 'http://localhost/password/evaluate';
+  private url = 'http://localhost:9999/password/evaluate';
 
   constructor(private http: HttpClient) { }
 
