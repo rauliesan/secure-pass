@@ -21,7 +21,6 @@ export class LoginComponent {
     password: new FormControl ('', [Validators.required])
   });
 
-
   mostrarPassword = false;
   errorMessage = '';
 
