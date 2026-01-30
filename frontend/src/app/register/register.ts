@@ -26,7 +26,8 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.registerForm.invalid){
-      return
+      this.errorMessage = "Completa todos los campos de forma correcta";
+      return;
     };
 
     this.authService.register(this.registerForm.value.email!, this.registerForm.value.password!).subscribe({

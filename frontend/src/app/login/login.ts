@@ -26,6 +26,7 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.invalid){
+      this.errorMessage = "Completa todos los campos de forma correcta";
       return;
     };
 
