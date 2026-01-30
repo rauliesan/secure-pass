@@ -1,13 +1,26 @@
-<!-- Navbar Simplificado integrado -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
   <div class="container">
     <a class="navbar-brand" routerLink="/">🔒 PassCheck</a>
-    <div class="d-flex">
+    
+    <div class="d-flex align-items-center">
       <a class="nav-link text-white me-3" routerLink="/" routerLinkActive="fw-bold">Inicio</a>
-      <a class="nav-link text-white" routerLink="/evaluate" routerLinkActive="fw-bold">Evaluador</a>
+      <a class="nav-link text-white me-3" routerLink="/evaluate" routerLinkActive="fw-bold">Evaluador</a>
+
+      <!-- COMPROBACIÓN DE USUARIO -->
+      @if (user) {
+        <!-- Si el usuario existe -->
+        <span class="text-info me-3 small">{{ user.email }}</span>
+        
+        <button (click)="logOut()" class="btn btn-outline-danger btn-sm rounded-pill px-3">
+          Log Out
+        </button>
+      } @else {
+        <!-- Si NO existe usuario -->
+        <a class="nav-link text-white me-3" routerLink="/login" routerLinkActive="fw-bold">LogIn</a>
+        <a class="nav-link text-white" routerLink="/register" routerLinkActive="fw-bold">Register</a>
+      }
     </div>
   </div>
 </nav>
-
 
 <router-outlet></router-outlet>

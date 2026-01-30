@@ -1,16 +1,81 @@
-<div class="container text-center mt-5">
-    <div class="card shadow-sm border-0 bg-light p-5">
-        <div class="card-body">
-            <h1 class="display-4 text-primary">Password Strength Evaluator</h1>
-            <p class="lead mt-3">
-                Analiza la seguridad de tus contraseñas al instante.
-                Descubre cuánto tardaría un ataque de fuerza bruta en descifrarlas.
+<!-- HERO SECTION -->
+<div class="container py-5">
+    <div class="row align-items-center g-5 py-4">
+        
+        <!-- Texto Principal -->
+        <div class="col-lg-6">
+            <div class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-stars me-1"></i> Seguridad IA
+            </div>
+            <h1 class="display-4 fw-bold lh-1 mb-3 text-dark">
+                ¿Es tu contraseña <span class="text-primary">realmente segura?</span>
+            </h1>
+            <p class="lead text-muted mb-4">
+                No dejes tu seguridad al azar. Utiliza nuestro algoritmo avanzado para analizar la fortaleza de tus claves contra ataques de fuerza bruta.
             </p>
-            <hr class="my-4">
-            <p>Utilizamos algoritmos avanzados para darte sugerencias precisas.</p>
-            <a routerLink="/evaluate" class="btn btn-primary btn-lg mt-2">
-                Ir al Evaluador
-            </a>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a routerLink="/evaluate" class="btn btn-primary btn-lg px-4 me-md-2 rounded-pill fw-bold shadow-sm hover-scale">
+                    <i class="bi bi-shield-check me-2"></i> Evaluar Ahora
+                </a>
+                <a routerLink="/register" class="btn btn-outline-secondary btn-lg px-4 rounded-pill fw-semibold">
+                    Crear Cuenta
+                </a>
+            </div>
         </div>
+
+        <!-- Imagen / Icono Gigante -->
+        <div class="col-lg-6 text-center">
+            <div class="position-relative">
+                <div class="bg-primary opacity-10 position-absolute top-50 start-50 translate-middle rounded-circle" 
+                     style="width: 300px; height: 300px; filter: blur(60px); z-index: -1;"></div>
+                <i class="bi bi-shield-lock text-dark" style="font-size: 10rem;"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FEATURES SECTION -->
+<div class="container py-5" id="features">
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        
+        <!-- Feature 1 -->
+        <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 hover-lift bg-light">
+                <div class="card-body p-4">
+                    <div class="feature-icon bg-primary bg-opacity-10 text-primary rounded-3 mb-3 d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <i class="bi bi-lightning-charge-fill fs-4"></i>
+                    </div>
+                    <h3 class="fs-4 fw-bold">Análisis Instantáneo</h3>
+                    <p class="text-muted">Obtén resultados en milisegundos. Calculamos la entropía y el tiempo estimado de hackeo al instante.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 hover-lift bg-light">
+                <div class="card-body p-4">
+                    <div class="feature-icon bg-success bg-opacity-10 text-success rounded-3 mb-3 d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <i class="bi bi-lightbulb-fill fs-4"></i>
+                    </div>
+                    <h3 class="fs-4 fw-bold">Sugerencias Inteligentes</h3>
+                    <p class="text-muted">No solo te decimos si es mala, te decimos por qué y cómo mejorarla con consejos prácticos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="col">
+            <div class="card h-100 border-0 shadow-sm rounded-4 hover-lift bg-light">
+                <div class="card-body p-4">
+                    <div class="feature-icon bg-warning bg-opacity-10 text-warning rounded-3 mb-3 d-inline-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <i class="bi bi-graph-up-arrow fs-4"></i>
+                    </div>
+                    <h3 class="fs-4 fw-bold">Historial de Usuario</h3>
+                    <p class="text-muted">Regístrate para llevar un conteo de cuántas contraseñas has verificado y mejora tus hábitos.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

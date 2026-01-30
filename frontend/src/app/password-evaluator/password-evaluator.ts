@@ -2,6 +2,8 @@ import { Component, inject, signal } from '@angular/core';
 import { PasswordService } from '../services/password-service';
 import { PasswordResponse } from '../models/password-response-interface';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth-service';
+import { UserResponse } from '../models/user-response-interface';
 
 @Component({
   selector: 'app-password-evaluator',
@@ -13,8 +15,10 @@ export class PasswordEvaluator {
 
 
   private passwordService = inject(PasswordService);
+  private authService = inject(AuthService);
 
   passwordResponse = signal<PasswordResponse | null>(null);
+  userResponse = signal<UserResponse | null>(null);
 
   mostrarPassword = false;
 
@@ -29,11 +33,26 @@ export class PasswordEvaluator {
           this.passwordResponse.set(data);
         },
       })
+      this.updateContador();
     }
   }
 
-  nivelScore(){
-    
+  // Para que al cargarse ya aparezca
+  ngOnInit(){
+    this.updateContador();
+  }
+
+  updateContador(){
+    let userJSON = localStorage.getItem("currentUser");
+    let user = JSON.parse(userJSON ?? '');
+    if(user == ""){
+      return;
+    }
+    this.authService.contador(user.id).subscribe( {
+      next: data => {
+        this.userResponse.set(data);
+      }
+    })
   }
 
 }

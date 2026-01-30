@@ -13,7 +13,10 @@ export class PasswordService {
   constructor(private http: HttpClient) { }
 
   evaluate(password: string): Observable<PasswordResponse> {
-    return this.http.post<PasswordResponse>(this.url, {password});
+    let userJSON = localStorage.getItem("currentUser");
+    let user = JSON.parse(userJSON ?? '');
+    let userId = user.id;
+    return this.http.post<PasswordResponse>(this.url, {password, userId});
   }
 
 }

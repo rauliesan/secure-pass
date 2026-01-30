@@ -6,3 +6,5 @@ const bootstrap = (context: BootstrapContext) =>
     bootstrapApplication(App, config, context);
 
 export default bootstrap;
+import 'localstorage-polyfill'
+global['localStorage'] = localStorage;
