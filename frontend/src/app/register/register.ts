@@ -6,7 +6,7 @@ import { AuthService } from '../services/auth-service';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink], // Importante para el formulario y los links
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
@@ -15,10 +15,9 @@ export class RegisterComponent {
   private authService = inject(AuthService);
   private router = inject(Router);
 
-  // Formulario reactivo para registro
+  
   registerForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    // Añadimos MinLength para evitar contraseñas vacías o muy cortas
     password: new FormControl('', [Validators.required, Validators.minLength(4)]) 
   });
 
@@ -26,16 +25,15 @@ export class RegisterComponent {
   errorMessage = '';
 
   onSubmit() {
-    if (this.registerForm.invalid) return;
+    if (this.registerForm.invalid){
+      return
+    };
 
-    const { email, password } = this.registerForm.value;
-
-    this.authService.register(email!, password!).subscribe({
+    this.authService.register(this.registerForm.value.email!, this.registerForm.value.password!).subscribe({
       next: (response) => {
-        // Al registrarse, guardamos el usuario (Auto-login)
+
         localStorage.setItem('currentUser', JSON.stringify(response));
         
-        // Redirigimos directamente al evaluador
         this.router.navigate(['/evaluate']);
       },
       error: (err) => {

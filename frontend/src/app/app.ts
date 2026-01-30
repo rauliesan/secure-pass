@@ -1,6 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +12,7 @@ export class App {
 
   private router = inject(Router);
 
+  // Se ejecuta al llamar a la variable user en el html
   get user() {
     return JSON.parse(localStorage.getItem('currentUser') || 'null');
   }

@@ -12,12 +12,12 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(user: string, password: string): Observable<UserResponse> {
-    return this.http.get<UserResponse>(this.url+"/login?email="+user+"&password="+password);
+  login(email: string, password: string): Observable<UserResponse> {
+    return this.http.get<UserResponse>(this.url+"/login?email="+email+"&password="+password);
   }
 
-  register(user: string, password: string): Observable<UserResponse> {
-    return this.http.post<UserResponse>(this.url+"/register", {user, password});
+  register(email: string, password: string): Observable<UserResponse> {
+    return this.http.post<UserResponse>(this.url+"/register", {email, password});
   }
 
   contador(id: number): Observable<UserResponse>{

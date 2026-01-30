@@ -6,16 +6,14 @@
       <a class="nav-link text-white me-3" routerLink="/" routerLinkActive="fw-bold">Inicio</a>
       <a class="nav-link text-white me-3" routerLink="/evaluate" routerLinkActive="fw-bold">Evaluador</a>
 
-      <!-- COMPROBACIÓN DE USUARIO -->
+      <!-- Comprobar si existe el usuario -->
       @if (user) {
-        <!-- Si el usuario existe -->
         <span class="text-info me-3 small">{{ user.email }}</span>
         
         <button (click)="logOut()" class="btn btn-outline-danger btn-sm rounded-pill px-3">
           Log Out
         </button>
       } @else {
-        <!-- Si NO existe usuario -->
         <a class="nav-link text-white me-3" routerLink="/login" routerLinkActive="fw-bold">LogIn</a>
         <a class="nav-link text-white" routerLink="/register" routerLinkActive="fw-bold">Register</a>
       }
