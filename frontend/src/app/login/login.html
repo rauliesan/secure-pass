@@ -28,12 +28,13 @@
                   formControlName="email" 
                   placeholder="nombre@ejemplo.com">
               </div>
-            </div>
-            @if (loginForm.get('email')?.touched && loginForm.get('email')?.invalid) {
+              @if (loginForm.get('email')?.touched && loginForm.get('email')?.invalid) {
               <div class="text-danger small mt-1 ps-1">
                 Por favor, introduce un email válido.
               </div>
             }
+            </div>
+            
 
             <div class="mb-4">
               <label class="form-label fw-semibold text-secondary small text-uppercase ls-1">Contraseña</label>
@@ -51,7 +52,6 @@
                   <i class="bi bi-eye"></i>
                 </button>
               </div>
-              <!-- No se debería de cumplir la condición ya que el botón de envío del formulario está desabilitado hasta que el formulario cumpla con los requisitos -->
               @if (loginForm.get('password')?.touched && loginForm.get('password')?.invalid) {
                 <div class="text-danger small mt-1 ps-1">
                   Debes de ingresar la contraseña.
